@@ -13,10 +13,9 @@ def get_system_metrics():
         ram = psutil.virtual_memory().percent
         disk = psutil.disk_usage('/').percent
     except Exception as e:
-        print(f"[WARN] Error while reading metrics: {e}")
+        print(f"Error while reading metrics: {e}")
         cpu_usage, ram, disk = "N/A", "N/A", "N/A"
 
-    # Temperatura: funziona su Raspi, su PC è N/A
     temperature = "N/A"
     temp_file = "/sys/class/thermal/thermal_zone0/temp"
     if os.path.exists(temp_file):
@@ -43,7 +42,7 @@ def write_to_csv(data):
                 writer.writeheader()
             writer.writerow(data)
     except Exception as e:
-        print(f"[WARN] Error while writing on CSV: {e}")
+        print(f"Error while writing on csv: {e}")
 
 def main():
     print(f"Recording every {INTERVAL_MINUTES} minutes")
