@@ -54,7 +54,7 @@ def main():
             write_to_csv(metrics)
             print(f"[{metrics['timestamp']}] CPU {metrics['cpu_usage']}% | RAM {metrics['ram_usage']}% | Disk {metrics['disk_usage']}% | Temp {metrics['temperature']}")
         except Exception as e:
-            print(f"[ERROR] Loop crashed: {e}")
+            print(f"Loop crashed: {e}")
         time.sleep(INTERVAL_MINUTES * 60)
 
 if __name__ == "__main__":
