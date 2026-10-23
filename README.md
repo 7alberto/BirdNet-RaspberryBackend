@@ -163,7 +163,7 @@ The dashboard provides a real-time visual UI for monitoring system health and Bi
 ### 2.3 How It Works
 
 ```text
-  [ Lavalier Microphone ]
+  [ Environmental Microphone ]
              │
              ▼
   [ Raspberry Pi (BirdNET Live Script) ]
