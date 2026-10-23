@@ -134,7 +134,7 @@ dtoverlay=disable-bt
 #### Step 6: Bird Detection Monitor Setup (Local PC)
 1. On your monitoring computer, clone the `bird_detection_monitor` repository:
    ```bash
-   git clone https://github.com/your-org/bird_detection_monitor.git
+   git clone https://github.com/7alberto/bird_detection_monitor.git
    cd bird_detection_monitor
    pip install -r requirements.txt
    ```
