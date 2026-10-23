@@ -52,18 +52,20 @@ This document describes in detail the procedure for setting up and configuring R
 1. Connect the lavalier microphone to the 3.5mm jack input on the HiFiBerry board.
 2. Enable microphone bias voltage by closing **both bias jumpers** (item **#5** in the pinout diagram below). Locate the two-pin headers on the left and right sides of the 3.5mm audio jack and place jumper blocks across them.
 
-![HiFiBerry DAC+ ADC Pro Pinout](docs/images/hifiberry_dac_adc_pro.png)
+More details in the [official documentation of the DAC + ADC Pro](https://www.hifiberry.com/docs/data-sheets/datasheet-dac-adc-pro/)
+
+![HiFiBerry DAC+ ADC Pro Pinout](docs/images/image01.png)
 
 
 ##### HiFiBerry Board Layout Reference
-| Pin / Header # | Description |
+| Item # | Description |
 | :--- | :--- |
 | **1** | Analog input (3.5mm stereo jack) |
 | **2** | Analog output (RCA connectors) |
 | **3** | Analog output (P5 pin header) |
 | **4** | I2S data interface (factory/development use only) |
 | **5** | **Microphone bias jumpers** (close both headers to supply microphone bias voltage) |
-| **6** | Analog input header |
+| **6** | Analog input |
 
 ---
 
@@ -114,7 +116,7 @@ dtoverlay=disable-bt
 #### Step 5: Bird Detection Backend Setup
 1. Clone the `bird_detection_backend` repository:
    ```bash
-   git clone https://github.com/your-org/bird_detection_backend.git
+   git clone https://github.com/7alberto/BirdNet-RaspberryBackend.git
    cd bird_detection_backend
    pip install -r requirements.txt
    ```
@@ -212,32 +214,32 @@ streamlit run app.py
 #### Overview Page
 Provides an overview of current unit operations and real-time detection logs.
 
-![Dashboard Overview](docs/images/dashboard_overview.png)
+![Dashboard Overview](docs/images/image02.png)
 
 #### Sidebar Section
 Displays real-time hardware health metrics (Recording state, CPU %, RAM %, Disk %, and Temperature). Allows configuring maximum display table rows, toggling non-species filters, refreshing state, and clearing audio cache.
 
-![Sidebar Section](docs/images/dashboard_sidebar.png)
+![Sidebar Section](docs/images/image03.png)
 
 #### Date & Confidence Filtering
 Filter detection events by date range and confidence band tags (`low`, `medium`, `high`, `very_high`).
 
-![Date and Confidence Filters](docs/images/dashboard_filters.png)
+![Date and Confidence Filters](docs/images/image04.png)
 
 #### Species Threshold Adjustment
 Fine-tune confidence classification thresholds dynamically per bird species.
 
-![Species Threshold Adjustment](docs/images/dashboard_thresholds.png)
+![Species Threshold Adjustment](docs/images/image05.png)
 
 #### Detections Table
 Comprehensive log detailing timestamps, call duration, species classification, raw confidence values, assigned thresholds, and audio filename references.
 
-![Detections Table](docs/images/dashboard_table.png)
+![Detections Table](docs/images/image06.png)
 
 #### Spectrogram and Audio Player
 Select any entry in the detection table to trigger audio playback and inspect the spectrogram visual representation. The target acoustic event is enclosed within a highlighted blue box.
 
-![Spectrogram and Audio View](docs/images/dashboard_spectrogram.png)
+![Spectrogram and Audio View](docs/images/image07.png)
 
 ---
 
